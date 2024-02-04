@@ -24,8 +24,6 @@ public class Grades {
 		double literature = input.nextDouble();
 		double english = input.nextDouble();
 
-		System.out.println(classification(math, literature, english));
-		final int a = 5;
-		
+		System.out.println(classification(math, literature, english));		
 	}
 }
