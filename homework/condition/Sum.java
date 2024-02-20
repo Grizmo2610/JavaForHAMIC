@@ -8,7 +8,6 @@ public class Sum {
 		if (l % t != 0){
 			u1 = (l / t + 1) * t;
 		}
-
 		int un = r / t * t;
 		int n = (un - u1) / t + 1;
 		return n * (u1 + un) / 2 ;
