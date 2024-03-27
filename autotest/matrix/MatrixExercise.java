@@ -349,7 +349,7 @@ class Exercise04 implements MatrixExercise{
 	 */
 	@Override
 	public void test() throws FileNotFoundException {
-		ArrayList<MyStructure> input  = MatrixExercise.input(3);
+		ArrayList<MyStructure> input  = MatrixExercise.input(4);
 		String path = "src/autotest/matrix/data/exercise04/output.txt";
 		ArrayList<int[]> output = MatrixExercise.output(path);
 		for (int testCase = 0; testCase < input.size(); testCase++){
