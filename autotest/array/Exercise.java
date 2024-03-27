@@ -103,6 +103,19 @@ public interface Exercise {
 			return true;
 		}return false;
 	}
+	static boolean wrongAnswer(int[] solution, int[] result, int[] input, int target, int test){
+		if (notEqual(solution , result)){
+			System.out.println("Wrong answer in test " + (test + 1));
+			System.out.println("Input: ");
+			System.out.println("Nums = " + Arrays.toString(input));
+			System.out.println("Target = " + target);
+			System.out.println("Output: ");
+			System.out.println(Arrays.toString(solution));
+			System.out.println("Expected: ");
+			System.out.println(Arrays.toString(result));
+			return true;
+		}return false;
+	}
 }
 
 class Exercise01 implements Exercise{
@@ -211,7 +224,7 @@ class Exercise04 implements Exercise{
 		ArrayList<int[]> output = Exercise.output(4);
 		for (int i = 0; i < input.size(); i++){
 			int[] result = new int[]{Array.searchInsert(input.get(i).nums, input.get(i).target)};
-			if (Exercise.wrongAnswer(result, output.get(i), input.get(i).nums , i )){
+			if (Exercise.wrongAnswer(result, output.get(i), input.get(i).nums, input.get(i).target, i )){
 				return;
 			}
 		}

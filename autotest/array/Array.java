@@ -1,8 +1,5 @@
 package autotest.array;
 
-import java.io.FileNotFoundException;
-
-
 public class Array {
 	/**
 	 * Exercise 01: Given an array nums. We define a running sum of an
@@ -35,9 +32,8 @@ public class Array {
 	}
 
 	/**
-	 *
 	 * Given the array nums consisting of 2n elements in the form [x1,x2,...,xn,y1,y2,...,yn].
-	 *
+	 * <p>
 	 * Return the array in the form [x1,y1,x2,y2,...,xn,yn].
 	 * @param nums input array
 	 * @param n one half of the array length
