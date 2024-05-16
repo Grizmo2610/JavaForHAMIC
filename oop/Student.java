@@ -32,7 +32,7 @@ public class Student extends People {
 	 * @param hour The time students have spent studying before the exam
 	 */
 	public void study(int hour){
-		/*TODO*/
+		this.studyHour += hour;
 	}
 
 	/**
@@ -44,8 +44,11 @@ public class Student extends People {
 	 * @return true if student can pass all the exam
 	 */
 	public boolean pass(int[] hours){
-		/*TODO*/
-		return false;
+		double sum = 0;
+		for (int hour: hours){
+			sum += hour;
+		}
+		return sum <= studyHour;
 	}
 
 	/**
@@ -64,8 +67,22 @@ public class Student extends People {
 	 * @param portion The ratio of study time before the exam that
 	 *                students have allocated to each respective subject.
 	 */
+	// hours.length = n -> n mon hoc da dang ky trong ky nay. hours[0] -> thoi gian toi thieu cho mon 1
+	// portion[i] -> thoi luong hoc ban nay se danh ra de danh cho mon thu i
+
 	public void test(int[] hours, int[] portion){
-		/*TODO*/
+		if (pass(hours)){
+			double sum = 0;
+			for (int i = 0; i < hours.length; i++){
+				sum += 0.25 * portion[i];
+				studyHour -= portion[i];
+				if (studyHour <= 0){
+					break;
+				}
+			}
+			this.gpa = sum / (3 * hours.length);
+		}
+
 	}
 
 	/**
@@ -74,8 +91,7 @@ public class Student extends People {
 	 * @return true if 'GPA' > 3.5 and studyHour left > 1
 	 */
 	public boolean getScholarship(){
-		/*TODO*/
-		return false;
+		return this.gpa > 3.5 && studyHour > 1;
 	}
 
 	@Override

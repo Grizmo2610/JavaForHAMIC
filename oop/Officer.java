@@ -64,8 +64,7 @@ public class Officer extends People{
 	 * @return true if the time is > 8
 	 */
 	public boolean isFinish(int hour){
-		/*TODO*/
-		return false;
+		return hour > 8;
 	}
 
 	/**
@@ -75,7 +74,8 @@ public class Officer extends People{
 	 * @param salary new salary
 	 */
 	public void raise(String major, int salary){
-		/*TODO*/
+		this.major = major;
+		this.salary = salary;
 	}
 
 	/**
@@ -83,14 +83,15 @@ public class Officer extends People{
 	 * @param amount The additional salary portion.
 	 */
 	public void raise(int amount){
-		/*TODO*/
+		this.salary += amount;
 	}
 
 	/**
 	 * This method implements dismissal employees and set salary to 0
 	 */
 	public void dismissal(){
-		/*TODO*/
+		this.id = "";
+		this.salary = 0;
 	}
 
 	@Override
